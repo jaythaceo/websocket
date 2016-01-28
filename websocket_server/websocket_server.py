@@ -74,13 +74,22 @@ class API():
     self,_multicast_(msg)
 
 
+# --------------------------- Implementation --------------------------
 
+class WebSocketServer(ThreadingMixIn, TCPServer, API):
 
+  allow_reuse_address = True
+  daemon_threads = True # comment to keep threads alive until finished
 
+  """
+  clients list of a dict:
+  {
+    'id'      :id
+    'handler' :handler
+    'address' :(addr, port)
+  }
 
-
-
-
+  """
 
 
 
