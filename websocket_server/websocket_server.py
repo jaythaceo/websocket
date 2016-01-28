@@ -90,6 +90,8 @@ class WebSocketServer(ThreadingMixIn, TCPServer, API):
   }
 
   """
+  clients = []
+
 
 
 
